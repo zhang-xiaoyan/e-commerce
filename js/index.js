@@ -110,4 +110,46 @@ $(function(){
             });
         }
     })();
+    // 自动播放的焦点图
+    (function(){
+        var oDiv=$("#fade");
+        var aUlli=oDiv.find("ul li");
+        var aOlli=oDiv.find("ol li");
+        var oP=oDiv.find("p");
+        var arr=[ '爸爸去哪儿啦~', '人像摄影中的光影感', '娇柔妩媚、美艳大方'];
+        var iNow=0;
+        var timer=null;
+        fnFade();// 先初始化一下
+        aOlli.click(function(){
+            iNow=$(this).index();// 当前的索引值
+            fnFade();
+        });
+        oDiv.hover(function(){// 鼠标移入的时候停止掉自动播放，移出的时候再继续自动播放
+            clearInterval(timer);
+        },function(){
+            autoPaly();
+        });
+        function autoPaly(){
+            timer=setInterval(function(){// 自动播放每次相隔1s
+                iNow++;
+                iNow%=arr.length;
+                fnFade();
+            },1000);
+        }
+        autoPaly();
+        function fnFade(){
+            aUlli.each(function(index){
+                if(index!=iNow){
+                    aUlli.eq(index).fadeOut().css("z-index",1);// 除了当前的不等于iNow的所有li,并且把层级降低
+                    // 假如iNow=0,当索引值index不是0时，执行上面的代码
+                    aOlli.eq(index).removeClass("active");
+                }else{
+                    aUlli.eq(index).fadeIn().css("z-index",2);// 如果等于了，就让当前的li淡出，并且提升层级
+                    // 假如iNow=0，index=0，这时候iNow=index，执行上面的代码
+                    aOlli.eq(index).addClass("active");
+                }
+            });
+            oP.text(arr[iNow]);
+        }
+    })();
 });
