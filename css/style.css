@@ -113,8 +113,8 @@ body{margin-bottom: 30px;}
 #search .key_text a{ color: #fbfbfb;}
 
 #search .update{ width: 406px; height: 32px; position: absolute; left: 226px; bottom: 0;background: url("../img/search_info.png") no-repeat -224px 10px;}
-#search .update .wrap{padding-left: 60px; height: 32px; overflow: hidden;}
-#search .update ul{}
+#search .update .wrap{padding-left: 60px; height: 32px; overflow: hidden; position: relative; }
+#search .update ul{ position: absolute; }
 #search .update .wrap ul li{ height: 32px; line-height: 32px;}
 #search .update a{ color: #000000;font-family: 微软雅黑;}
 #search .update strong{ color: #d30703; font-weight: normal;}
