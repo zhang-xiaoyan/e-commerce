@@ -255,7 +255,8 @@ body{margin-bottom: 30px;}
 .calender .active{border: 2px solid #d30408;width: 36px;height: 36px;position: absolute;left: 0;top: 0;}
 .calender .img1{width: 40px;height: 40px;position: absolute;left: 0;top: 0;}
 
-.today_info{ width: 289px;height: 85px;border: 1px solid #c0c0c0;padding: 10px 15px;background: #ffffff;position: absolute;left: 220px;top: 125px;box-shadow: 3px 4px 0 rgba(0,0,0,0.25);}
+.today_info{ width: 289px;height: 85px;border: 1px solid #c0c0c0;padding: 10px 15px;background: #ffffff;position: absolute;left: 220px;top: 125px;box-shadow: 3px 4px 0 rgba(0,0,0,0.25);
+            display: none; }
 .today_info .img2{width: 81px;height: 81px;border: 2px solid #dbdbdb;float: left;}
 .today_info .img img{ width: 81px;height: 81px;}
 .today_info .text2{ width: 200px;height: 85px;float: right;}

@@ -152,4 +152,39 @@ $(function(){
             oP.text(arr[iNow]);
         }
     })();
+    // 日历提示说明
+    (function(){
+        var aUlli=$("#date1 li");
+        var aImg=$("#date2 li .img1");
+        var oPrompt=$(".today_info");
+        var oImg=oPrompt.find(".img2 img");
+        var oStr=oPrompt.find(".text2 h4 strong");
+        var oP=oPrompt.find(".text2 p");
+        aImg.hover(function(){// 鼠标的移入和移出
+            var iTop=$(this).parent().position().top-30;// 当前元素的父级(li)距离它的父级(ol)的top值
+            var num=$(this).parent().index()%aUlli.size();
+            //console.log(iTop);
+            //console.log($(this).attr("info"));
+            //console.log($(this).parent().index());
+            //console.log($(this).parent().index()%aUlli.size());
+            // jQ中的长度用size()来表示
+            var iLeft=$(this).parent().position().left+45;// 当前元素的父级(li)距离它的父级(ol)的left值
+            oPrompt.show();
+            oPrompt.css({"left":iLeft,"top":iTop});
+            oP.text($(this).attr("info"));
+            oImg.attr("src",$(this).attr("src"));
+            oStr.text(aUlli.eq(num).text());
+        },function(){
+            oPrompt.hide();
+        });
+    })();
+    // BBS 高亮显示
+    (function(){
+        var aOlli=$("#bbs li");
+        aOlli.hover(function(){
+            aOlli.removeClass("active");
+            $(this).addClass("active");
+        });
+        // 或者aOlli.mouseover(function(){})这个事件
+    })();
 });
