@@ -90,7 +90,24 @@ $(function(){
             }
             oUl.stop().animate({"top":iH*iNow},2200,"elasticOut");// 前面需要加上stop()，每次点击的时候，需要停止之前的运动形式
             // 只需要当前的运动形式，就不会出现连续点击的问题
-
+        }
+    })();
+    // options 选项卡切换
+    (function(){
+        fnTab($(".tabNav1"),$(".tabCon1"));
+        fnTab($(".tabNav2"),$(".tabCon2"));
+        function fnTab(oNav,aCon){
+            var aElem=oNav.children();// 找到下面的第一级的子元素
+            aCon.hide().eq(0).show();// 全部隐藏，但是第0个显示
+            aElem.each(function(index){// 一会儿还要用到索引值，所以要用到each循环
+                $(this).click(function(){
+                    aElem.removeClass("active").addClass("gradient");// 这个不能用attr，attr是直接就被换掉了
+                    $(this).removeClass("gradient").addClass("active");
+                    aElem.find("a").attr("class","triangle_down_gray");// 把class的属性值改成后面(指定的属性值)
+                    $(this).find("a").attr("class","triangle_down_red");// 把当前的class的属性值改成后面(指定的属性值)
+                    aCon.hide().eq(index).show();
+                });
+            });
         }
     })();
 });
