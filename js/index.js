@@ -187,4 +187,34 @@ $(function(){
         });
         // 或者aOlli.mouseover(function(){})这个事件
     })();
+    // 红人烧客的鼠标提示
+    (function(){
+        var arr = [
+            '',
+            '用户1<br />人气1',
+            '用户名：性感宝贝<br />区域：朝阳CBD<br />人气：124987',
+            '用户3<br />人气3',
+            '用户4<br />人气4',
+            '用户5<br />人气5',
+            '用户6<br />人气6',
+            '用户7<br />人气7',
+            '用户8<br />人气8',
+            '用户9<br />人气9',
+            '用户10<br />人气10'
+        ];
+        var aLi=$(".hot_area ul li");
+        aLi.mouseover(function(){
+            if($(this).index()==0){
+                return;
+            }
+            aLi.find("p").remove();//这样就把p标签删除掉了
+            $(this).width();// 当前li的宽
+            //console.log($(this).width());
+            //console.log(aLiH);
+            $(this).append("<p class='info'>"+ arr[$(this).index()] +"</p>");// 样式中有padding，记得得到的宽度-12
+            var oInfo=$(".info");
+            oInfo.width($(this).width()-12);
+            oInfo.height($(this).height()-9);
+        });
+    })();
 });

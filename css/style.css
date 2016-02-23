@@ -313,7 +313,7 @@ body{margin-bottom: 30px;}
 .hot_area .area1 img{ width: 156px;height: 78px;}
 .hot_area .area2{ width: 77px;height: 78px;}
 .hot_area .area2 img{ width: 77px; height: 78px;}
-.hot_area li .info{ width: 144px;height: 69px;background: rgba(0,0,0,0.4);position: absolute;color: #ffffff;line-height: 18px;padding: 9px 0 0 12px;}
+.hot_area li .info{ width: 144px;height: 69px;background: rgba(0,0,0,0.4);position: absolute;color: #ffffff;line-height: 18px;padding: 9px 0 0 12px;left: 0;top: 0;}
 
 .help_info{width: 318px;height: 91px;border-bottom: 1px solid #ededee;}
 .help_info .p1{ line-height: 18px;color: #333333;padding:12px 0 0 5px;text-indent: 2em;width: 313px;height:36px;}
